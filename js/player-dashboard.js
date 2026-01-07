@@ -55,7 +55,7 @@ function initializeSidebarToggle() {
     if (!sidebar || !toggleButton) return;
     
     // Check if sidebar should be collapsed by default on smaller screens
-    const shouldCollapseByDefault = window.innerWidth <= 1440;
+    const shouldCollapseByDefault = window.innerWidth <= 1200;
     if (shouldCollapseByDefault) {
         sidebar.classList.add('collapsed');
     }
@@ -66,31 +66,43 @@ function initializeSidebarToggle() {
     // Toggle sidebar on button click
     toggleButton.addEventListener('click', function(e) {
         e.stopPropagation();
+        
+        // Se a tela for menor que 1200px, não permitir expandir
+        if (window.innerWidth <= 1200) {
+            // Força sidebar a ficar colapsada
+            sidebar.classList.add('collapsed');
+            return;
+        }
+        
         sidebar.classList.toggle('collapsed');
         
-        // Save state to localStorage
+        // Save state to localStorage (apenas se tela > 1200px)
         localStorage.setItem('sidebarCollapsed', sidebar.classList.contains('collapsed'));
         
         // Adjust player image size when sidebar state changes
         adjustPlayerImageSize();
     });
     
-    // Restore state from localStorage (if available)
-    const savedState = localStorage.getItem('sidebarCollapsed');
-    if (savedState !== null) {
-        if (savedState === 'true') {
-            sidebar.classList.add('collapsed');
-        } else {
-            sidebar.classList.remove('collapsed');
+    // Restore state from localStorage (if available) - apenas se tela > 1200px
+    if (window.innerWidth > 1200) {
+        const savedState = localStorage.getItem('sidebarCollapsed');
+        if (savedState !== null) {
+            if (savedState === 'true') {
+                sidebar.classList.add('collapsed');
+            } else {
+                sidebar.classList.remove('collapsed');
+            }
+            // Adjust player image size after restoring state
+            adjustPlayerImageSize();
         }
-        // Adjust player image size after restoring state
-        adjustPlayerImageSize();
     }
     
     // Handle window resize
     window.addEventListener('resize', function() {
-        // On smaller screens, allow manual toggle but don't force collapse
-        // The media query will handle the responsive behavior
+        // On screens smaller than 1200px, force sidebar to be collapsed
+        if (window.innerWidth <= 1200) {
+            sidebar.classList.add('collapsed');
+        }
         // Adjust player image size on resize
         adjustPlayerImageSize();
     });
