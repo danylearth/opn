@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Physical Performance - Dashboard</title>
     <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 </head>
 <body>
     <div class="dashboard-container">
@@ -13,6 +14,10 @@
             <div class="sidebar-header">
                 <img src="assets/images/logo.svg" alt="OPN FC" class="logo">
             </div>
+            
+            <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar">
+                <img src="assets/images/icons/sidebar-right.svg" alt="Toggle sidebar" class="toggle-icon">
+            </button>
             
             <nav class="sidebar-nav">
                 <div class="menu-item">
@@ -139,14 +144,16 @@
                         <div class="player-details-grid">
                             <div class="detail-row">
                                 <div class="detail-item">
-                                    <div class="detail-icon">🏴󠁧󠁢󠁥󠁮󠁧󠁿</div>
+                                    <div class="detail-icon flag-icon">🏴󠁧󠁢󠁥󠁮󠁧󠁿</div>
                                     <div class="detail-content">
                                         <div class="detail-label">Nat.</div>
                                         <div class="detail-value">Eng.</div>
                                     </div>
                                 </div>
                                 <div class="detail-item">
-                                    <img src="assets/images/icons/age.svg" alt="Age" class="detail-icon">
+                                    <div class="detail-icon">
+                                        <img src="assets/images/icons/age.svg" alt="Age">
+                                    </div>
                                     <div class="detail-content">
                                         <div class="detail-label">Age</div>
                                         <div class="detail-value">24 Yrs</div>
@@ -156,14 +163,18 @@
                             
                             <div class="detail-row">
                                 <div class="detail-item">
-                                    <img src="assets/images/icons/height.svg" alt="Height" class="detail-icon">
+                                    <div class="detail-icon">
+                                        <img src="assets/images/icons/height.svg" alt="Height">
+                                    </div>
                                     <div class="detail-content">
                                         <div class="detail-label">Height</div>
                                         <div class="detail-value">194 cm</div>
                                     </div>
                                 </div>
                                 <div class="detail-item">
-                                    <img src="assets/images/icons/pref-foot.svg" alt="Preferred Foot" class="detail-icon">
+                                    <div class="detail-icon">
+                                        <img src="assets/images/icons/pref-foot.svg" alt="Preferred Foot">
+                                    </div>
                                     <div class="detail-content">
                                         <div class="detail-label">Pref. Foot</div>
                                         <div class="detail-value">Left</div>
@@ -173,14 +184,18 @@
                             
                             <div class="detail-row">
                                 <div class="detail-item">
-                                    <img src="assets/images/icons/position.svg" alt="Position" class="detail-icon">
+                                    <div class="detail-icon">
+                                        <img src="assets/images/icons/position.svg" alt="Position">
+                                    </div>
                                     <div class="detail-content">
                                         <div class="detail-label">Position</div>
                                         <div class="detail-value">Forward</div>
                                     </div>
                                 </div>
                                 <div class="detail-item">
-                                    <img src="assets/images/icons/shirt-number.svg" alt="Shirt Number" class="detail-icon">
+                                    <div class="detail-icon">
+                                        <img src="assets/images/icons/shirt-number.svg" alt="Shirt Number">
+                                    </div>
                                     <div class="detail-content">
                                         <div class="detail-label">Shirt N.</div>
                                         <div class="detail-value">9</div>
@@ -193,42 +208,37 @@
                 
                 <!-- Stats Cards -->
                 <div class="stats-cards-container">
-                    <div class="stats-row">
-                        <div class="stat-card success">
-                            <div class="stat-value">85%</div>
-                            <div class="stat-label">training completed</div>
-                        </div>
-                        <div class="stat-card success">
-                            <div class="stat-value">1096</div>
-                            <div class="stat-label">season training mins of 2500</div>
-                        </div>
-                        <div class="stat-card success">
-                            <div class="stat-value">2</div>
-                            <div class="stat-label">season comp mins of 500</div>
-                        </div>
-                        <div class="stat-card success">
-                            <div class="stat-value">4</div>
-                            <div class="stat-label">injuries this season</div>
-                        </div>
+                    <div class="stat-card success">
+                        <div class="stat-value">85%</div>
+                        <div class="stat-label">training completed</div>
                     </div>
-                    
-                    <div class="stats-row">
-                        <div class="stat-card warning">
-                            <div class="stat-value">7</div>
-                            <div class="stat-label">rpe current average</div>
-                        </div>
-                        <div class="stat-card error">
-                            <div class="stat-value">5</div>
-                            <div class="stat-label">sleep hours current average</div>
-                        </div>
-                        <div class="stat-card success">
-                            <div class="stat-value">1.5</div>
-                            <div class="stat-label">acute/chronic load</div>
-                        </div>
-                        <div class="stat-card purple">
-                            <div class="stat-value">1.88</div>
-                            <div class="stat-label">hydration</div>
-                        </div>
+                    <div class="stat-card success">
+                        <div class="stat-value">1096</div>
+                        <div class="stat-label">season training mins of 2500</div>
+                    </div>
+                    <div class="stat-card success">
+                        <div class="stat-value">2</div>
+                        <div class="stat-label">season comp mins of 500</div>
+                    </div>
+                    <div class="stat-card success">
+                        <div class="stat-value">4</div>
+                        <div class="stat-label">injuries this season</div>
+                    </div>
+                    <div class="stat-card warning">
+                        <div class="stat-value">7</div>
+                        <div class="stat-label">rpe current average</div>
+                    </div>
+                    <div class="stat-card error">
+                        <div class="stat-value">5</div>
+                        <div class="stat-label">sleep hours current average</div>
+                    </div>
+                    <div class="stat-card success">
+                        <div class="stat-value">1.5</div>
+                        <div class="stat-label">acute/chronic load</div>
+                    </div>
+                    <div class="stat-card purple">
+                        <div class="stat-value">1.88</div>
+                        <div class="stat-label">hydration</div>
                     </div>
                 </div>
             </div>
@@ -255,6 +265,6 @@
         </main>
     </div>
     
-    <script src="js/script.js"></script>
+    <script src="js/player-dashboard.js"></script>
 </body>
 </html>
