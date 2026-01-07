@@ -1,0 +1,58 @@
+:root {
+    /* Neutral Colors */
+    --neutral---black: rgba(0, 0, 0, 1);
+    --neutral---white: rgba(255, 255, 255, 1);
+    --neutral--colors--100: rgba(251, 251, 251, 1);
+    --neutral--colors--200: rgba(243, 243, 250, 1);
+    --neutral--colors--2200: rgba(12, 12, 13, 1);
+    --neutral--colors--background: rgba(248, 248, 252, 1);
+    
+    /* Brand Colors */
+    --brand---midnight: rgba(0, 25, 21, 1);
+    --brand---muted--teal: rgba(58, 104, 96, 1);
+    --brand---muted--teal-hover: rgba(45, 82, 74, 1);
+    --brand---seafoam: rgba(115, 168, 161, 1);
+    --brand---aqua--pop: rgba(104, 224, 201, 1);
+    --brand---aqua--pop-hover: rgba(93, 212, 184, 1);
+    --brand---aqua-pop-10: rgba(104, 224, 201, 0.10000000149011612);
+    --brand---breeze: rgba(204, 221, 218, 1);
+    
+    /* Verde: Success */
+    --system--color---success--200: rgba(236, 251, 248, 1);
+    --system--color---success--600: rgba(198, 243, 234, 1);
+    --system--color---success--1300: rgba(132, 229, 211, 1);
+    
+    /* Amarelo: Warning */
+    --system--color---warning--200: rgba(251, 247, 236, 1);
+    --system--color---warning--600: rgba(243, 231, 198, 1);
+    --system--color---warning--2600: rgba(84, 72, 39, 1);
+    
+    /* Vermelho: Error */
+    --system--color---error--200: rgba(251, 236, 236, 1);
+    --system--color---error--600: rgba(243, 198, 199, 1);
+    --system--color---error--1300: rgba(229, 132, 133, 1);
+    --system--color---error--2600: rgba(84, 39, 39, 1);
+    
+    /* Roxo: Info */
+    --system--color---purple--100: rgba(246, 245, 253, 1);
+    --system--color---purple--200: rgba(238, 236, 251, 1);
+    --system--color---purple--600: rgba(206, 198, 243, 1);
+    --system--color---purple--1300: rgba(150, 132, 229, 1);
+    --system--color---purple--2600: rgba(47, 39, 84, 1);
+    
+    /* Transparent Colors */
+    --transparent-white-10: rgba(255, 255, 255, 0.1);
+    --transparent-white-5: rgba(255, 255, 255, 0.05);
+    --transparent-white-7: rgba(255, 255, 255, 0.7);
+    --transparent-white-4: rgba(255, 255, 255, 0.4);
+    --transparent-white-5-opacity: rgba(255, 255, 255, 0.5);
+    --transparent-white-2: rgba(255, 255, 255, 0.2);
+    --transparent-black-02: rgba(0, 0, 0, 0.02);
+    --transparent-black-05: rgba(0, 0, 0, 0.5);
+    --transparent-black-015: rgba(0, 0, 0, 0.15);
+    
+    /* Border & Shadow Colors */
+    --border-color: rgba(240, 243, 247, 1);
+    --border-color-hover: rgba(232, 236, 245, 1);
+    --transparent-shadow: rgba(68, 68, 99, 0.07);
+}
